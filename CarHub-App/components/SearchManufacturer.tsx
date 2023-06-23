@@ -14,7 +14,7 @@ const SearchManufacturer = ({ manufacturer, setManuFacturer }: SearchManuFacture
     query === ''
       ? manufacturers
       : manufacturers.filter((item: any) => {
-          item.toLowerCase.replace(/\s+/g, '').includes(query.toLowerCase().replace(/\s+/g, ''))
+         return item.toLowerCase().replace(/\s+/g, '').includes(query.toLowerCase().replace(/\s+/g, ''))
         })
 
   return (

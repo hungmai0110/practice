@@ -17,10 +17,12 @@ const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
   </button>
 )
 
-const SearchBar = ({ manufacturer, setManuFacturer }: SearchManuFacturerProps) => {
-  const handleSearch = () => {}
+const SearchBar = () => {
   const [model, setModel] = useState('')
-
+  const [manufacturer, setManuFacturer] = useState("");
+  
+  const handleSearch = () => {}
+  
   return (
     <form className="searchbar" onSubmit={handleSearch}>
       <div className="searchbar__item">

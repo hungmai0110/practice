@@ -1,8 +1,13 @@
-import { Hero, SearchBar, CustomFilter } from '@/components'
+import { Hero, SearchBar, CustomFilter, ShowMore, CarCad } from '@/components'
 import { HomeProps } from '@/types'
 import { fuels, yearsOfProduction } from '@/constants'
+import { fetchCars } from '@/utils'
 
-export default function Home({ searchParams }: HomeProps) {
+export default async function Home({ searchParams }: HomeProps) {
+  const allCars = await fetchCars()
+
+  const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
+
   return (
     <main className="overflow-hidden">
       <Hero />
@@ -22,11 +27,11 @@ export default function Home({ searchParams }: HomeProps) {
           </div>
         </div>
 
-        {/* {!isDataEmpty ? (
+        {!isDataEmpty ? (
           <section>
             <div className="home__cars-wrapper">
               {allCars?.map((car) => (
-                <CarCard car={car} />
+                <CarCad car={car} />
               ))}
             </div>
 
@@ -40,7 +45,7 @@ export default function Home({ searchParams }: HomeProps) {
             <h2 className="text-black text-xl font-bold">Oops, no results</h2>
             <p>{allCars?.message}</p>
           </div>
-        )} */}
+        )}
       </div>
     </main>
   )

@@ -32,7 +32,7 @@ const DashBoard = () => {
         </div>
       </div>
 
-      <input
+      {/* <input
         id="progress"
         className="progress"
         type="range"
@@ -40,7 +40,7 @@ const DashBoard = () => {
         step="1"
         min="0"
         max="100"
-      />
+      /> */}
 
       <audio id="audio" src=""></audio>
     </div>

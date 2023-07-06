@@ -28,7 +28,12 @@ body {
   height: 20px;
 }
 
-/* .note-list {
-  width: 100%;
-  margin: 0 auto;
-} */
+.note-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.note-list .ant-card-body {
+  padding: 0 24px;
+}
